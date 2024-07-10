@@ -1,15 +1,14 @@
-import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import './carousel.css'; // Custom CSS file for custom styling
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const CustomNextArrow = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
       className={`${className} custom-arrow custom-next `}
-      style={{ ...style,}}
+      style={{ ...style }}
       onClick={onClick}
     >
       &gt;
@@ -46,33 +45,30 @@ export const Carousel = ({ children }) => {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
     <div className="carousel-container">
-      <Slider {...settings}>
-        {children}
-      </Slider>
+      <Slider {...settings}>{children}</Slider>
     </div>
   );
 };
-

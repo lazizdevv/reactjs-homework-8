@@ -5,10 +5,9 @@ import { ProductCard } from "../../components/productCard";
 import { nanoid } from "nanoid";
 import { brandData } from "../../data/brandData";
 import { shopData } from "../../data/shopData";
-import { Carousel } from "../../components/banner/banner";
+import { Carousel } from "../../components/carousel";
 import homeBanner from "../../assets/images/homeBanner.png";
-
-import { BrandsCard } from "../../components/brandsCard/brands-card";
+import { BrandsCard } from "../../components/brandsCard";
 
 export const Home = () => {
   return (

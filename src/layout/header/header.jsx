@@ -1,11 +1,10 @@
-import { Like } from "../../assets/svg/like";
 import { Likes } from "../../assets/svg/likes";
 import { Logo } from "../../assets/svg/logo";
 import { Mail } from "../../assets/svg/mail";
 import { Menu } from "../../assets/svg/menu";
 import { Search } from "../../assets/svg/search";
 import { Shop } from "../../assets/svg/shopnav";
-import { Carousel } from "../../components/banner/banner";
+import { Carousel } from "../../components/carousel/carousel";
 import headerBanner1 from "../../assets/images/headerBanner1.png";
 
 export const Header = () => {
