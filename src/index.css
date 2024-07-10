@@ -5,9 +5,9 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Nuckle';
-  src: url('/fonts/nuckle/Nuckle-Semibold.woff2') format('woff2'),
-       url('/fonts/nuckle/Nuckle-Semibold.woff') format('woff');
+  font-family: "Nuckle";
+  src: url("/fonts/nuckle/Nuckle-Semibold.woff2") format("woff2"),
+    url("/fonts/nuckle/Nuckle-Semibold.woff") format("woff");
   font-weight: 539;
   font-style: normal;
 }
@@ -25,7 +25,11 @@ footer {
 }
 
 .hr {
-  background: linear-gradient(270deg, rgba(77, 94, 246, 0.2), rgba(246, 77, 77, 0.2) 100%);
+  background: linear-gradient(
+    270deg,
+    rgba(77, 94, 246, 0.2),
+    rgba(246, 77, 77, 0.2) 100%
+  );
 }
 
 .custom-arrow {
@@ -53,10 +57,55 @@ footer {
   font-size: 16px;
   border-radius: 50%;
   color: transparent;
-  background: linear-gradient(270deg, rgba(77, 94, 246, 0.2), rgba(246, 77, 77, 0.2) 100%);
+  background: linear-gradient(
+    270deg,
+    rgba(77, 94, 246, 0.2),
+    rgba(246, 77, 77, 0.2) 100%
+  );
 }
 
 .slick-dots li.slick-active button:before {
   background: linear-gradient(270deg, rgb(77, 94, 246), rgb(246, 77, 77) 100%);
   color: transparent;
+}
+
+@media (max-width: 1000px) {
+  .custom-next {
+    right: 5px;
+  }
+
+  .custom-prev {
+    left: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-next {
+    right: 5px;
+  }
+
+  .custom-prev {
+    left: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-arrow {
+    width: 25px;
+    height: 25px;
+  }
+
+  .slick-dots li button:before {
+    font-size: 10px;
+  }
+
+  .custom-next {
+    right: 5px;
+    background: transparent;
+  }
+
+  .custom-prev {
+    left: 5px;
+    background: transparent;
+  }
 }
