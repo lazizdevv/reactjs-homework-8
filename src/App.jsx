@@ -1,12 +1,33 @@
 import { Route, Routes } from "react-router-dom";
-import { Home } from "./pages/home";
 import { MainLayout } from "./layout/main-layout";
+import { routes, userRoute } from "./routes/routes";
+import { UserLayout } from "./layout/user-layout/user-layout";
 
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
-        <Route index element={<Home />} />
+        {routes.map(({ component: Element, id, path }) => (
+          <Route
+            index={!path ? true : false}
+            path={path}
+            key={id}
+            element={<Element />}
+          />
+        ))}
+
+        <Route path="profile" element={<UserLayout />}>
+          {userRoute.map(({ component: Element, id, path }) => {
+            return (
+              <Route
+                index={!path ? true : false}
+                path={path}
+                key={id}
+                element={<Element />}
+              />
+            );
+          })}
+        </Route>
       </Route>
     </Routes>
   );

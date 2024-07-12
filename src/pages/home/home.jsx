@@ -5,13 +5,15 @@ import { ProductCard } from "../../components/productCard";
 import { nanoid } from "nanoid";
 import { brandData } from "../../data/brandData";
 import { shopData } from "../../data/shopData";
-import { Carousel } from "../../components/carousel";
-import homeBanner from "../../assets/images/homeBanner.png";
 import { BrandsCard } from "../../components/brandsCard";
+import { Link } from "react-router-dom";
+import { HeaderBanner } from "../../components/header-banner";
+import { HomeBanner } from "../../components/home-banner";
 
 export const Home = () => {
   return (
     <>
+    <HeaderBanner/>
       <div className="container">
         <div className="mb-10 mt-24">
           <h1 className="text-secondary font-nuckle text-[28px] font-[539] leading-[36px] tracking-[0%] text-left mb-5">
@@ -40,7 +42,10 @@ export const Home = () => {
 
           <div className="grid grid-cols-1 justify-items-center gap-2 lg:gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             {productData.map((product) => (
+              <Link to={`/product-detail/${product.id}`} key={product.id}>
+              
               <ProductCard key={nanoid()} {...product} />
+              </Link>
             ))}
           </div>
 
@@ -54,26 +59,7 @@ export const Home = () => {
           </button>
         </div>
 
-        <div className="my-[60px]">
-          <Carousel>
-            <div className="">
-              <img src={homeBanner} alt="" />
-            </div>
-            <div className="">
-              <img src={homeBanner} alt="" />
-            </div>
-            <div className="">
-              <img src={homeBanner} alt="" />
-            </div>
-
-            <div className="">
-              <img src={homeBanner} alt="" />
-            </div>
-            <div className="">
-              <img src={homeBanner} alt="" />
-            </div>
-          </Carousel>
-        </div>
+        <HomeBanner/>
 
         <div className="mb-16">
           <h1 className="text-secondary font-nuckle text-[28px] font-[539] leading-[36px] tracking-[0%] text-left mb-5">
@@ -82,12 +68,10 @@ export const Home = () => {
 
           <div className="grid grid-cols-1 justify-items-center gap-2 lg:gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             {productData.map((product) => (
-              <ProductCard
-                key={nanoid()}
-                {...product}
-                top={false}
-                isNew={false}
-              />
+              <Link to={`/product-detail/${product.id}`} key={product.id}>
+              
+              <ProductCard key={nanoid()} {...product} />
+              </Link>
             ))}
           </div>
 
@@ -113,26 +97,7 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className="my-[60px]">
-          <Carousel>
-            <div className="">
-              <img src={homeBanner} alt="" />
-            </div>
-            <div className="">
-              <img src={homeBanner} alt="" />
-            </div>
-            <div className="">
-              <img src={homeBanner} alt="" />
-            </div>
-
-            <div className="">
-              <img src={homeBanner} alt="" />
-            </div>
-            <div className="">
-              <img src={homeBanner} alt="" />
-            </div>
-          </Carousel>
-        </div>
+        <HomeBanner/>
 
         <div className="mb-[80px]">
           <h1 className="text-secondary font-nuckle text-[28px] font-[539] leading-[36px] tracking-[0%] text-left mb-5">

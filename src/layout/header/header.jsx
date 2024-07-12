@@ -1,11 +1,10 @@
+import { Link } from "react-router-dom";
 import { Likes } from "../../assets/svg/likes";
 import { Logo } from "../../assets/svg/logo";
 import { Mail } from "../../assets/svg/mail";
 import { Menu } from "../../assets/svg/menu";
 import { Search } from "../../assets/svg/search";
 import { Shop } from "../../assets/svg/shopnav";
-import { Carousel } from "../../components/carousel/carousel";
-import headerBanner1 from "../../assets/images/headerBanner1.png";
 
 export const Header = () => {
   return (
@@ -31,7 +30,10 @@ export const Header = () => {
           </div>
           <div className="flex justify-between py-[13px] flex-wrap gap-5 lg:gap-0">
             <div className="cursor-pointer">
-              <Logo />
+              <Link to={"/"}>
+              <Logo/>
+
+              </Link>
             </div>
             <button className="flex justify-between align-middle py-[11px] px-[18px] rounded-lg bg-gradient-to-l from-blue-500 to-red-500 w-[149px] cursor-pointer">
               <Menu />
@@ -59,34 +61,17 @@ export const Header = () => {
                 <Shop />
               </button>
 
-              <button className="py-[13px] w-[105px] rounded-lg bg-gradient-to-br from-blue-200 to-red-200 p-4 text-black font-[539] font-nuckle text-base  leading-[19px]  text-center">
-                Kirish
-              </button>
+              <Link to={"/profile"}>
+                <button className="py-[13px] w-[105px] rounded-lg bg-gradient-to-br from-blue-200 to-red-200 p-4 text-black font-[539] font-nuckle text-base  leading-[19px]  text-center">
+                  Kirish
+                </button>
+              </Link>
+
+              
             </div>
           </div>
         </div>
       </nav>
-
-      <div className="container my-10">
-        <Carousel>
-          <div className="">
-            <img src={headerBanner1} alt="" />
-          </div>
-          <div className="">
-            <img src={headerBanner1} alt="" />
-          </div>
-          <div className="">
-            <img src={headerBanner1} alt="" />
-          </div>
-
-          <div className="">
-            <img src={headerBanner1} alt="" />
-          </div>
-          <div className="">
-            <img src={headerBanner1} alt="" />
-          </div>
-        </Carousel>
-      </div>
     </>
   );
 };
